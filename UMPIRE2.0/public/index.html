@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Umpire Agent</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-eye"></i> AI Umpire Agent</h1>
+            <p>Upload a sports video and get an AI-powered umpire decision</p>
+        </header>
+
+        <main>
+            <!-- Upload Section -->
+            <div class="upload-section" id="uploadSection">
+                <div class="upload-area" id="uploadArea">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Upload Sports Video</h3>
+                    <p>Drop your video file here or click to browse</p>
+                    <input type="file" id="videoInput" accept="video/*" hidden>
+                    <div class="file-formats">
+                        <small>Supported formats: MP4, AVI, MOV, WMV (Max 100MB)</small>
+                    </div>
+                </div>
+
+                <!-- Sport Selection -->
+                <div class="sport-selection">
+                    <label for="sportSelect">Select Sport:</label>
+                    <select id="sportSelect">
+                        <option value="general">General Sports</option>
+                        <option value="cricket">Cricket</option>
+                        <option value="football">Football/Soccer</option>
+                        <option value="tennis">Tennis</option>
+                        <option value="basketball">Basketball</option>
+                    </select>
+                </div>
+
+                <button id="analyzeBtn" class="analyze-btn" disabled>
+                    <i class="fas fa-search"></i> Analyze Video
+                </button>
+            </div>
+
+            <!-- Processing Section -->
+            <div class="processing-section hidden" id="processingSection">
+                <div class="processing-animation">
+                    <i class="fas fa-cog fa-spin"></i>
+                </div>
+                <h3>AI Umpire is analyzing...</h3>
+                <div class="processing-steps">
+                    <div class="step" id="step1">
+                        <i class="fas fa-video"></i>
+                        <span>Processing complete video</span>
+                        <div class="step-status"></div>
+                    </div>
+                    <div class="step" id="step2">
+                        <i class="fas fa-eye"></i>
+                        <span>Analyzing with Vision AI</span>
+                        <div class="step-status"></div>
+                    </div>
+                    <div class="step" id="step3">
+                        <i class="fas fa-brain"></i>
+                        <span>Applying sports rules</span>
+                        <div class="step-status"></div>
+                    </div>
+                    <div class="step" id="step4">
+                        <i class="fas fa-gavel"></i>
+                        <span>Making final decision</span>
+                        <div class="step-status"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-section hidden" id="resultsSection">
+                <div class="decision-card">
+                    <div class="decision-header">
+                        <h2><i class="fas fa-gavel"></i> Umpire Decision</h2>
+                        <div class="confidence-badge" id="confidenceBadge">
+                            <span id="confidenceLevel">High</span>
+                        </div>
+                    </div>
+
+                    <div class="final-call">
+                        <div class="call-text" id="finalCall">OUT</div>
+                    </div>
+
+                    <div class="decision-details">
+                        <h3>Analysis Summary</h3>
+                        <div class="decision-content" id="decisionContent">
+                            <!-- Decision details will be populated here -->
+                        </div>
+                    </div>
+
+                    <div class="video-info">
+                        <div class="info-item">
+                            <i class="fas fa-sports-ball"></i>
+                            <span>Sport: <strong id="sportType">Cricket</strong></span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Duration: <strong id="videoDuration">5.2s</strong></span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-video"></i>
+                            <span>Analysis Type: <strong id="framesCount">Complete Video Analysis</strong></span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-volume-up"></i>
+                            <span>Audio: <strong id="audioStatus">Available</strong></span>
+                        </div>
+                    </div>
+
+                    <button id="analyzeAnotherBtn" class="secondary-btn">
+                        <i class="fas fa-plus"></i> Analyze Another Video
+                    </button>
+                </div>
+            </div>
+
+            <!-- Error Section -->
+            <div class="error-section hidden" id="errorSection">
+                <div class="error-card">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Analysis Failed</h3>
+                    <p id="errorMessage">An error occurred while analyzing the video.</p>
+                    <button id="tryAgainBtn" class="secondary-btn">
+                        <i class="fas fa-redo"></i> Try Again
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by Google Gemini AI | Built for sports video analysis</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
