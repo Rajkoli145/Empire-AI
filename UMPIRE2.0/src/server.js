@@ -11,7 +11,7 @@ const { cleanupTempFiles } = require('./utils/fileUtils');
 const { execSync } = require('child_process');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 // Check if FFmpeg is available
 let ffmpegAvailable = false;

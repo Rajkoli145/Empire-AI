@@ -5,12 +5,16 @@ const { v4: uuidv4 } = require('uuid');
 
 class VideoProcessor {
   constructor() {
-    this.tempDir = path.join(__dirname, '../../temp');
+    // Use /tmp for Google Cloud App Engine compatibility
+    this.tempDir = process.env.NODE_ENV === 'production' ? '/tmp' : path.join(__dirname, '../../temp');
     this.ensureTempDir();
   }
 
   async ensureTempDir() {
-    await fs.ensureDir(this.tempDir);
+    if (process.env.NODE_ENV !== 'production') {
+      await fs.ensureDir(this.tempDir);
+    }
+    // /tmp already exists in production environments
   }
 
   /**

@@ -6,6 +6,8 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
+    "deploy": "gcloud app deploy",
+    "logs": "gcloud app logs tail -s default",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

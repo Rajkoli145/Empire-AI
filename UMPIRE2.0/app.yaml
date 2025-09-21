@@ -1,0 +1,21 @@
+runtime: nodejs20
+
+env_variables:
+  GEMINI_API_KEY: "AIzaSyDNXOfetZBccRUjXigU5Um-P10Xua3guBc"
+  NODE_ENV: "production"
+  PORT: "8080"
+
+automatic_scaling:
+  min_instances: 1
+  max_instances: 10
+  target_cpu_utilization: 0.6
+
+resources:
+  cpu: 1
+  memory_gb: 2
+  disk_size_gb: 10
+
+handlers:
+- url: /.*
+  script: auto
+  secure: always

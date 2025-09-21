@@ -1,0 +1,10 @@
+.git
+.gitignore
+README.md
+node_modules/
+uploads/
+*.log
+.env
+service-account-key.json
+.DS_Store
+check-setup.js

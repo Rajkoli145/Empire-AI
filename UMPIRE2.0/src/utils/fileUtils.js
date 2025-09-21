@@ -6,7 +6,7 @@ const path = require('path');
  */
 async function cleanupTempFiles() {
   try {
-    const tempDir = path.join(__dirname, '../../temp');
+    const tempDir = process.env.NODE_ENV === 'production' ? '/tmp' : path.join(__dirname, '../../temp');
     const uploadsDir = path.join(__dirname, '../../uploads');
     
     // Clean temp directory
@@ -49,7 +49,7 @@ async function cleanupTempFiles() {
  */
 async function ensureDirectories() {
   const dirs = [
-    path.join(__dirname, '../../temp'),
+    process.env.NODE_ENV === 'production' ? '/tmp' : path.join(__dirname, '../../temp'),
     path.join(__dirname, '../../uploads'),
     path.join(__dirname, '../../public')
   ];
