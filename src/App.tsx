@@ -122,7 +122,7 @@ function App() {
           </p>
           
           <button 
-            onClick={() => window.open('http://localhost:3000', '_blank')}
+            onClick={() => window.open('https://ai-umpire.vercel.app/', '_blank')}
             className="group inline-flex items-center px-8 py-4 bg-emerald-800 hover:bg-emerald-900 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
             <span>Explore Prototype</span>
             <ChevronRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
@@ -587,7 +587,7 @@ function App() {
           </p>
           
           <button 
-            onClick={() => window.open('http://localhost:3000', '_blank')}
+            onClick={() => window.open('https://ai-umpire.vercel.app/', '_blank')}
             className="group inline-flex items-center px-12 py-5 bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-lg rounded-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
             <span>Try the Prototype</span>
             <ChevronRight className="w-6 h-6 ml-3 transition-transform group-hover:translate-x-1" />
